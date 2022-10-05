@@ -1,6 +1,7 @@
 
 /**
  * This is our abstract builder. It allows a shared interface among many types
+ * It is important that we separate the concept of class from type
  */
 public interface IUserBuilder {
 
@@ -14,8 +15,8 @@ public interface IUserBuilder {
     void setLanguageKey();
     void setLocalSIDKey();
     void setTimeZone();
-    void setPermSets();
     User getUser();
+
 
 
 }

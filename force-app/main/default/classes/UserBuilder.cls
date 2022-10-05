@@ -3,25 +3,29 @@
  */
 public with sharing class UserBuilder {
 
-    public with sharing  class Admin implements IUserBuilder{
+    public with sharing class Admin implements IUserBuilder {
+
         private User user;
 
         public Admin(){
             this.user = new User();
         }
 
-        public void setFirstName(){
+
+        public void setFirstName() {
             this.user.FirstName = 'Test';
         }
 
-        public void setLastName(){
+
+        public void setLastName() {
             this.user.LastName = 'TestAdmin';
         }
 
 
         public void setEmail() {
-            this.user.Email = 'fake@fake.net';
+            this.user.Email = 'FakeAdmin@fake.net';
         }
+
         public void setUsername() {
             user.Username = 'testAdminUser@' + String.valueOf(Crypto.getRandomInteger()) + '.com';
         }
@@ -51,15 +55,11 @@ public with sharing class UserBuilder {
             user.TimeZoneSidKey = 'America/Los_Angeles';
         }
 
-        public void setPermSets() {
-
-        }
-
-
         public User getUser() {
             return user;
         }
     }
+
     public with sharing class Standard implements IUserBuilder {
         public User user { get; private set; }
 
@@ -107,10 +107,6 @@ public with sharing class UserBuilder {
 
         public void setTimeZone() {
             user.TimeZoneSidKey = 'America/Los_Angeles';
-        }
-
-        public void setPermSets() {
-
         }
 
 

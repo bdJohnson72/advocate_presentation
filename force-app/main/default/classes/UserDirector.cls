@@ -2,7 +2,7 @@
  * The director class accepts a IUserBuilder and constructs and returns one.
  */
 public with sharing class UserDirector {
-
+    //has-a relationship vs a is-a relationship
     private IUserBuilder userBuilder;
 
     public UserDirector(IUserBuilder userBuilder){
@@ -20,7 +20,9 @@ public with sharing class UserDirector {
         userBuilder.setLanguageKey();
         userBuilder.setProfile();
         userBuilder.setTimeZone();
-        userBuilder.setPermSets();
         return this.userBuilder.getUser();
     }
+
+
+
 }

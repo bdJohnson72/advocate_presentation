@@ -19,8 +19,9 @@ public with sharing class UserBuilder_Tests {
     static void itShouldUpdate() {
         //given
 
+
         //when
-        System.runAs(new UserDirector(New UserBuilder.Admin()).build()) {
+        System.runAs(new UserDirector(new UserBuilder.Admin()).build()) {
 
             //then
             System.assert(accountSelector()[0].Admin_Only__c == 'test', 'Admin users should have access');
@@ -30,6 +31,8 @@ public with sharing class UserBuilder_Tests {
     @IsTest
     static void itShouldNotUpdate() {
         //given
+        //given
+
         //when
         System.runAs(UserFactory.getInstance(UserTypes.STANDARD)) {
             try {
