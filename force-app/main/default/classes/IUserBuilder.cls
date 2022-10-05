@@ -1,4 +1,7 @@
 
+/**
+ * This is our abstract builder. It allows a shared interface among many types
+ */
 public interface IUserBuilder {
 
     void setFirstName();
@@ -13,5 +16,6 @@ public interface IUserBuilder {
     void setTimeZone();
     void setPermSets();
     User getUser();
+
 
 }

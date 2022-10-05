@@ -1,14 +1,15 @@
 /**
- * Created by brooks on 10/2/2022.
+ * The director class accepts a IUserBuilder and constructs and returns one.
  */
-
 public with sharing class UserDirector {
 
-    IUserBuilder userBuilder;
+    private IUserBuilder userBuilder;
 
-
-    public User build(IUserBuilder userBuilder) {
+    public UserDirector(IUserBuilder userBuilder){
         this.userBuilder = userBuilder;
+    }
+
+    public User build(){
         userBuilder.setFirstName();
         userBuilder.setLastName();
         userBuilder.setUsername();

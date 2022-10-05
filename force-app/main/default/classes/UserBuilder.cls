@@ -1,28 +1,27 @@
 /**
- * Created by brooks on 10/2/2022.
+ * class containing concrete implementations of the IUserBuilder
  */
-
 public with sharing class UserBuilder {
 
-    public with sharing class Admin implements IUserBuilder {
-        public User user { get; private set; }
+    public with sharing  class Admin implements IUserBuilder{
+        private User user;
 
-        public Admin() {
+        public Admin(){
             this.user = new User();
         }
 
-        public void setFirstName() {
-            user.FirstName = 'Test';
+        public void setFirstName(){
+            this.user.FirstName = 'Test';
         }
 
-        public void setLastName() {
-            user.LastName = 'Admin';
+        public void setLastName(){
+            this.user.LastName = 'TestAdmin';
         }
+
 
         public void setEmail() {
-            user.Email = 'fake@fake.com';
+            this.user.Email = 'fake@fake.net';
         }
-
         public void setUsername() {
             user.Username = 'testAdminUser@' + String.valueOf(Crypto.getRandomInteger()) + '.com';
         }
@@ -61,7 +60,6 @@ public with sharing class UserBuilder {
             return user;
         }
     }
-
     public with sharing class Standard implements IUserBuilder {
         public User user { get; private set; }
 
@@ -120,6 +118,4 @@ public with sharing class UserBuilder {
             return user;
         }
     }
-
-
 }
